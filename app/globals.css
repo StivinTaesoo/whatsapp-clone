@@ -1,7 +1,10 @@
-@import "tailwindcss";
-
+/* 1. Google Fonts import — MUST be at the absolute top */
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 
+/* 2. Tailwind layers — must come after external @imports */
+@import "tailwindcss";
+
+/* Now you can define custom properties / variables */
 :root {
     --font-sans: "Outfit", system-ui, -apple-system, sans-serif;
     --font-mono: "JetBrains Mono", monospace;

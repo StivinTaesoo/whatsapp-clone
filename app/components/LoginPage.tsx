@@ -77,7 +77,7 @@ const LoginPage: React.FC = () => {
                 </div>
 
                 <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
-                    Built with Next.js 14 • Data stored locally
+                    Built with Next.js 16 • Data stored locally
                 </p>
             </div>
         </div>
