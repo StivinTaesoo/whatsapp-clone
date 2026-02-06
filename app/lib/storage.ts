@@ -16,26 +16,26 @@ const parseDate = (date: any): Date => {
 const DUMMY_USERS: User[] = [
     {
         id: "1",
-        name: "Tope John",
+        name: "Alice Tope",
         avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alice",
         online: true,
     },
     {
         id: "2",
-        name: "Tersoo David",
+        name: "Hilary David",
         avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Bob",
         online: false,
         lastSeen: new Date(Date.now() - 3600000),
     },
     {
         id: "3",
-        name: "Chris Kunle",
+        name: "Charlie Kunle",
         avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Charlie",
         online: true,
     },
     {
         id: "4",
-        name: "Chinaza Joyce",
+        name: "Chinaza Diana",
         avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Diana",
         online: false,
         lastSeen: new Date(Date.now() - 86400000),
