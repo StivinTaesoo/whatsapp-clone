@@ -45,9 +45,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
         initializeStorage();
         const userId = getCurrentUserId();
         setCurrentUserIdState(userId);
+        setUsers(getUsers());
 
         if (userId) {
-            setUsers(getUsers());
             setChats(getUserChats(userId));
         }
 

@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { useApp } from "../contexts/AppContext";
-import { Chat, User, Message } from "../types";
+import { Chat, Message } from "../types";
 import {
     formatMessageTimestamp,
     formatLastSeen,
