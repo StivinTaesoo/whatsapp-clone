@@ -5,6 +5,7 @@ import React, { useState, useMemo } from "react";
 import { formatChatTimestamp, truncateText } from "../lib/utils";
 import { Chat, User } from "../types";
 import { useApp } from "../contexts/AppContext";
+import { MoreVertical, Plus } from "lucide-react";
 
 interface ChatListProps {
     selectedChatId: string | null;
@@ -19,6 +20,7 @@ const ChatList: React.FC<ChatListProps> = ({
 }) => {
     const { chats, users, currentUserId, darkMode, toggleDarkMode } = useApp();
     const [searchQuery, setSearchQuery] = useState("");
+    const [showNewChatModal, setShowNewChatModal] = useState(false);
 
     const currentUser = users.find((u) => u.id === currentUserId);
 
@@ -58,14 +60,42 @@ const ChatList: React.FC<ChatListProps> = ({
             <div className="bg-gray-50 dark:bg-gray-800 px-4 py-3 border-b border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
-                        <img
+                        {/* <img
                             src={currentUser?.avatar}
                             alt="Profile"
                             className="w-10 h-10 rounded-full ring-2 ring-gray-200 dark:ring-gray-600"
                         />
                         <span className="font-semibold text-gray-800 dark:text-white">
                             Chats
-                        </span>
+                        </span> */}
+                        <header className="bg-whatsapp text-white px-4 py-3 flex items-center justify-between border-b border-green-700/40 md:border-b md:border-gray-800">
+                            <div className="flex items-center gap-3">
+                                <h1 className="text-xl font-medium">
+                                    WhatsApp
+                                </h1>
+                            </div>
+                            <div className="flex items-center gap-5">
+                                {/* <button
+                            className="p-4 hover:bg-white/10 rounded-full transition-colors"
+                            title="Search"
+                        >
+                            <Search size={20} />
+                        </button> */}
+                                <button
+                                    className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                                    title="New chat"
+                                    onClick={() => setShowNewChatModal(true)}
+                                >
+                                    <Plus size={20} />
+                                </button>
+                                <button
+                                    className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                                    title="Menu"
+                                >
+                                    <MoreVertical size={20} />
+                                </button>
+                            </div>
+                        </header>
                     </div>
                     <div className="flex items-center gap-2">
                         <button
