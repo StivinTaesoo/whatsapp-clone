@@ -59,7 +59,7 @@ export default function Home() {
             <div className="flex flex-1 overflow-hidden relative min-h-0">
                 {/* Desktop Left Sidebar */}
                 <aside className="hidden md:flex md:flex-col md:w-20 bg-gray-900 text-white flex-shrink-0 border-r border-gray-800 h-full">
-                    <div className="flex flex-col flex-1 items-center justify-between my-8 py-4">
+                    <div className="flex flex-col flex-1 items-center justify-between py-4">
                         {/* Navigation */}
                         <nav className="flex flex-col gap-8">
                             {navigationTabs.map((tab) => {
@@ -103,6 +103,7 @@ export default function Home() {
                         selectedChat={selectedChat}
                         onChatSelect={handleChatSelect}
                         onNewChat={() => setShowNewChatModal(true)}
+                        setActiveTab={setActiveTab}
                     />
                 </div>
             </div>

@@ -59,15 +59,15 @@ const ChatList: React.FC<ChatListProps> = ({
             {/* Header */}
             <div className="bg-gray-50 dark:bg-gray-800 px-4 py-3 border-b border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                        {/* <img
+                    {/* <div className="flex items-center gap-3">
+                        <img
                             src={currentUser?.avatar}
                             alt="Profile"
                             className="w-10 h-10 rounded-full ring-2 ring-gray-200 dark:ring-gray-600"
                         />
                         <span className="font-semibold text-gray-800 dark:text-white">
                             Chats
-                        </span> */}
+                        </span>
                         <header className="bg-whatsapp text-white px-4 py-3 flex items-center justify-between border-b border-green-700/40 md:border-b md:border-gray-800">
                             <div className="flex items-center gap-3">
                                 <h1 className="text-xl font-medium">
@@ -75,12 +75,11 @@ const ChatList: React.FC<ChatListProps> = ({
                                 </h1>
                             </div>
                             <div className="flex items-center gap-5">
-                                {/* <button
+                                <button
                             className="p-4 hover:bg-white/10 rounded-full transition-colors"
                             title="Search"
                         >
-                            <Search size={20} />
-                        </button> */}
+                        </button>
                                 <button
                                     className="p-2 hover:bg-white/10 rounded-full transition-colors"
                                     title="New chat"
@@ -96,8 +95,8 @@ const ChatList: React.FC<ChatListProps> = ({
                                 </button>
                             </div>
                         </header>
-                    </div>
-                    <div className="flex items-center gap-2">
+                    </div> */}
+                    {/* <div className="flex items-center gap-2">
                         <button
                             onClick={toggleDarkMode}
                             className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-colors"
@@ -140,7 +139,7 @@ const ChatList: React.FC<ChatListProps> = ({
                                 />
                             </svg>
                         </button>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Search bar */}

@@ -74,11 +74,11 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ chat }) => {
         <div className="flex flex-col h-full">
             {/* Header */}
             <div className="bg-gray-50 dark:bg-gray-800 px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3">
-                {/* <img
+                <img
                     src={otherUser.avatar}
                     alt={otherUser.name}
-                    className="w-10 h-10 rounded-full"
-                /> */}
+                    className="w-10 h-10 rounded-full "
+                />
                 <div className="flex-1">
                     <h2 className="font-semibold text-gray-900 dark:text-white">
                         {otherUser.name}
