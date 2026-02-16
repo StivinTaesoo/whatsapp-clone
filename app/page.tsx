@@ -56,44 +56,46 @@ export default function Home() {
     return (
         <div className="h-screen flex flex-col overflow-hidden bg-gray-50 dark:bg-gray-950">
             {/* Main content area */}
-            <div className="flex flex-1 overflow-hidden relative">
+            <div className="flex flex-1 overflow-hidden relative min-h-0">
                 {/* Desktop Left Sidebar */}
-                <aside className="hidden md:flex md:flex-col md:justify-between md:w-20 lg:w-24 bg-gray-900 text-white flex-shrink-0 items-center py-8 space-y-10 border-r border-gray-800">
-                    {/* Logo */}
+                <aside className="hidden md:flex md:flex-col md:w-20 bg-gray-900 text-white flex-shrink-0 border-r border-gray-800 h-full">
+                    <div className="flex flex-col flex-1 items-center justify-between my-8 py-4">
+                        {/* Navigation */}
+                        <nav className="flex flex-col gap-8">
+                            {navigationTabs.map((tab) => {
+                                const Icon = tab.icon;
+                                return (
+                                    <button
+                                        key={tab.id}
+                                        onClick={() => setActiveTab(tab.id)}
+                                        className={`p-3 rounded-2xl transition-all ${
+                                            activeTab === tab.id
+                                                ? "bg-green-600/50 text-white"
+                                                : "hover:bg-gray-800"
+                                        }`}
+                                        title={tab.title}
+                                    >
+                                        <Icon size={28} />
+                                    </button>
+                                );
+                            })}
+                        </nav>
 
-                    {/* Navigation */}
-                    <nav className="flex flex-col gap- space-y-8">
-                        {navigationTabs.map((tab) => {
-                            const Icon = tab.icon;
-                            return (
-                                <button
-                                    key={tab.id}
-                                    onClick={() => setActiveTab(tab.id)}
-                                    className={`p-3 rounded-2xl transition-all ${
-                                        activeTab === tab.id
-                                            ? "bg-green-600/50 text-white"
-                                            : "hover:bg-gray-800"
-                                    }`}
-                                    title={tab.title}
-                                >
-                                    <Icon size={28} />
-                                </button>
-                            );
-                        })}
-                    </nav>
+                        {/* <div className="flex-1" /> */}
 
-                    {/* Settings */}
-                    <button
-                        onClick={() => setActiveTab(settingsTab.id)}
-                        className="mt-auto p-3 rounded-2xl hover:bg-gray-800 transition-all"
-                        title={settingsTab.title}
-                    >
-                        <settingsTab.icon size={28} />
-                    </button>
+                        {/* Settings */}
+                        <button
+                            onClick={() => setActiveTab(settingsTab.id)}
+                            className="p-3 rounded-2xl hover:bg-gray-800 transition-all"
+                            title={settingsTab.title}
+                        >
+                            <settingsTab.icon size={28} />
+                        </button>
+                    </div>
                 </aside>
 
                 {/* Main content */}
-                <div className="flex flex-col flex-1">
+                <div className="flex flex-col flex-1 min-h-0">
                     <MainContent
                         activeTab={activeTab}
                         showMobileChatList={showMobileChatList}
