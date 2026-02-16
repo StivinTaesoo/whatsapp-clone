@@ -24,6 +24,7 @@ interface AppContextType {
     refreshUsers: () => void;
     darkMode: boolean;
     toggleDarkMode: () => void;
+    logout: () => void; // Add this
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -89,6 +90,24 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
         }
     };
 
+    // Add logout function
+    const logout = () => {
+        // Clear current user
+        setCurrentUserIdState(null);
+
+        // Clear chats
+        setChats([]);
+
+        // Remove from localStorage
+        localStorage.removeItem("currentUserId");
+
+        // Optional: You might want to clear other user-specific data
+        // localStorage.removeItem("userPreferences");
+        // etc.
+
+        console.log("User logged out successfully");
+    };
+
     if (!mounted) {
         return null;
     }
@@ -104,6 +123,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
                 refreshUsers,
                 darkMode,
                 toggleDarkMode,
+                logout, // Add this to the provider value
             }}
         >
             {children}
